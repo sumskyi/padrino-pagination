@@ -1,0 +1,18 @@
+Pages:
+- if current_page > 3
+  =link_to 1, "/#{link}/1"
+  - if current_page != 4
+    &hellip;
+
+- (current_page-2..current_page+3).each do |page|
+  - next unless (1..total_pages+1).include? page
+  - if page == current_page
+    = page
+  - else
+    =link_to page, "/#{link}/#{page}"
+
+- if current_page <= total_pages-3
+  - if current_page != total_pages-3
+    &hellip;
+  =link_to total_pages, "/#{link}/#{total_pages}"
+

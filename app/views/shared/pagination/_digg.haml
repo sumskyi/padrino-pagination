@@ -1,0 +1,49 @@
+- if previous_page
+  =link_to '&laquo; Prev', "/#{link}/#{previous_page}"
+- else
+  &laquo; Prev
+
+- if total_pages < 13
+  - (1..total_pages).each do |page|
+    - if page == current_page
+      = page
+    - else
+      =link_to page, "/#{link}/#{page}"
+
+- elsif current_page < 9
+  - (1..10).each do |page|
+    - if page == current_page
+      = page
+    - else
+      =link_to page, "/#{link}/#{page}"
+  &hellip;
+  =link_to total_pages-1, "/#{link}/#{total_pages-1}"
+  =link_to total_pages,   "/#{link}/#{total_pages}"
+
+- elsif current_page > total_pages - 8
+  =link_to 1, "/#{link}/1"
+  =link_to 2, "/#{link}/2"
+  &hellip;
+  - (total_pages-9..total_pages).each do |page|
+    - if page == current_page
+      = page
+    - else
+      =link_to page, "/#{link}/#{page}"
+
+- else
+  =link_to 1, "/#{link}/1"
+  =link_to 2, "/#{link}/2"
+  &hellip;
+  - (current_page-5..current_page+5).each do |page|
+    - if page == current_page
+      = page
+    - else
+      =link_to page, "/#{link}/#{page}"
+  &hellip;
+  =link_to total_pages-1, "/#{link}/#{total_pages-1}"
+  =link_to total_pages,   "/#{link}/#{total_pages}"
+
+- if next_page
+  =link_to 'Next &raquo;', "/#{link}/#{next_page}"
+- else
+  Next &raquo;
