@@ -25,14 +25,14 @@ or with options:
 == Options:
 
 current_page:: current page (default 1)
-per_page:: items per page
+per_page:: items per page (default 20)
 template:: used template (brutal / classic / digg / extended / punbb)
 
 
 == Credits
 
-* {Padrino} [http://www.padrinorb.com/]
-* {Sinatra} [http://www.sinatrarb.com/]
-* templates are based on {Kohanaphp 2.3.4} [http://kohanaframework.org/download] pagination templates
+* {Padrino}[http://www.padrinorb.com/]
+* {Sinatra}[http://www.sinatrarb.com/]
+* templates are based on {Kohanaphp 2.3.4}[http://kohanaframework.org/download] pagination templates
 
 Copyright (c) 2010 Vladyslav Sumskyi, released under the MIT license
