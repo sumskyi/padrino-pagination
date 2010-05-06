@@ -1,0 +1,38 @@
+= padrino-haml-pagination
+
+HAML pagination templates for Padrino framework:
+
+* brutal
+* classic
+* digg
+* extended
+* punbb
+
+
+== Usage
+
+copy it to your mounted app in Padrino app
+
+In your template:
+
+    = paginate('posts', 7890, :current_page => 1)
+
+or with options:
+
+    = paginate(:articles, total, :current_page => page, :per_page => 12, :template => :brutal)
+
+
+== Options:
+
+current_page:: current page (default 1)
+per_page:: items per page
+template:: used template (brutal / classic / digg / extended / punbb)
+
+
+== Credits
+
+* {Padrino} [http://www.padrinorb.com/]
+* {Sinatra} [http://www.sinatrarb.com/]
+* templates are based on {Kohanaphp 2.3.4} [http://kohanaframework.org/download] pagination templates
+
+Copyright (c) 2010 Vladyslav Sumskyi, released under the MIT license
