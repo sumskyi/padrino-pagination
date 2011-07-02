@@ -21,8 +21,8 @@
   =link_to total_pages, url(controller, action, params.merge("page" => total_pages))
 
 - elsif current_page > total_pages - 8
-  =link_to 1, url(controller, action, params.merge("page" => )1)
-  =link_to 2, url(controller, action, params.merge("page" => )2)
+  =link_to 1, url(controller, action, params.merge("page" => 1))
+  =link_to 2, url(controller, action, params.merge("page" => 2))
   &hellip;
   - (total_pages-9..total_pages).each do |page|
     - if page == current_page
@@ -31,8 +31,8 @@
       =link_to page, url(controller, action, params.merge("page" => page))
 
 - else
-  =link_to 1, url(controller, action, params.merge("page" => )1)
-  =link_to 2, url(controller, action, params.merge("page" => )2)
+  =link_to 1, url(controller, action, params.merge("page" => 1))
+  =link_to 2, url(controller, action, params.merge("page" => 2))
   &hellip;
   - (current_page-5..current_page+5).each do |page|
     - if page == current_page
