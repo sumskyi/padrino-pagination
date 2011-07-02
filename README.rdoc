@@ -11,7 +11,7 @@ HAML pagination templates for Padrino framework:
 
 == Usage
 
-copy it to your mounted app in Padrino app
+Copy it to your mounted app in Padrino app. Make sure to change app/helpers/pagination_helper.rb to use your application name.
 
 In your template:
 
