@@ -1,11 +1,11 @@
 - if previous_page
-  =link_to '&laquo; Prev', url(controller, action, :page => previous_page)
+  =link_to '&laquo; Prev', url(controller, action, params.merge(:page => previous_page))
 - else
   &laquo; Prev
 | Page #{current_page} of #{total_pages}
 | items #{current_first_item} &ndash; #{current_last_item} of #{total_items}
 
 - if next_page
-  =link_to 'Next &raquo', url(controller, action, :page => next_page)
+  =link_to 'Next &raquo', url(controller, action, params.merge(:page => next_page))
 - else
   Next &raquo;

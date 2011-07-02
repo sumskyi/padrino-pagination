@@ -8,7 +8,7 @@ PadrinoDybil.helpers do
 
     opts[:controller] = controller
     opts[:action] = action
-
+    
     opts[:total_pages]    = (total/opts[:per_page].to_f).ceil
 
     opts[:previous_page]  = opts[:current_page] <= 1 ?                  nil : opts[:current_page] - 1
