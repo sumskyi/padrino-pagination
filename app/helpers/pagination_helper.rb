@@ -1,12 +1,13 @@
 PadrinoDybil.helpers do
-  def paginate(link, total, opts)
+  def paginate(controller, action, total, opts)
     opts = {
       :current_page => 1,
       :per_page     => 20,
       :template     => 'punbb' # 'extended', 'classic', 'brutal', 'digg'
     }.merge!(opts)
 
-    opts[:link] = link
+    opts[:controller] = controller
+    opts[:action] = action
 
     opts[:total_pages]    = (total/opts[:per_page].to_f).ceil
 

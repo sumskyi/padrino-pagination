@@ -15,11 +15,11 @@ copy it to your mounted app in Padrino app
 
 In your template:
 
-    = paginate('posts', 7890, :current_page => 1)
+    = paginate(:posts, :index, 7890, :current_page => 1)
 
 or with options:
 
-    = paginate(:articles, total, :current_page => page, :per_page => 12, :template => :brutal)
+    = paginate(:articles, :list, total, :current_page => page, :per_page => 12, :template => :brutal)
 
 
 == Options:
