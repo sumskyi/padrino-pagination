@@ -1,17 +1,17 @@
 - if current_page > 1
-  =link_to "&lsaquo; First", url(controller, action, params.merge(:page => )1)
+  =link_to "&lsaquo; First", url(controller, action, params.merge("page" => )1)
 
 - if previous_page
-  =link_to "&laquo;", url(controller, action, params.merge(:page => previous_page))
+  =link_to "&laquo;", url(controller, action, params.merge("page" => previous_page))
 
 - (1..total_pages).each do |page|
   - if page == current_page
     = page
   - else
-    =link_to page, url(controller, action, params.merge(:page => page))
+    =link_to page, url(controller, action, params.merge("page" => page))
 
 - if next_page
-  =link_to '&raquo;', url(controller, action, params.merge(:page => next_page))
+  =link_to '&raquo;', url(controller, action, params.merge("page" => next_page))
 
 - if last_page
-  =link_to 'Last &rsaquo;', url(controller, action, params.merge(:page => last_page))
+  =link_to 'Last &rsaquo;', url(controller, action, params.merge("page" => last_page))
