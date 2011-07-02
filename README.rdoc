@@ -24,6 +24,8 @@ or with options:
 
 == Options:
 
+The helper uses the link style of url(:controller, :action, :page => page) so that way it can be flexible for your controller schema.
+
 current_page:: current page (default 1)
 per_page:: items per page (default 20)
 template:: used template (brutal / classic / digg / extended / punbb)
