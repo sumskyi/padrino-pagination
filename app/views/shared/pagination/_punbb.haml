@@ -1,6 +1,6 @@
 Pages:
 - if current_page > 3
-  =link_to 1, "/#{link}/1"
+  =link_to 1, url(controller, action, :page => 1)
   - if current_page != 4
     &hellip;
 
@@ -9,10 +9,10 @@ Pages:
   - if page == current_page
     = page
   - else
-    =link_to page, "/#{link}/#{page}"
+    =link_to page, url(controller, action, :page => page)
 
 - if current_page <= total_pages-3
   - if current_page != total_pages-3
     &hellip;
-  =link_to total_pages, "/#{link}/#{total_pages}"
+  =link_to total_pages, url(controller, action, :page => total_pages)
 
