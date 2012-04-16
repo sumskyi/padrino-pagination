@@ -1,49 +1,54 @@
-- if previous_page
-  =link_to '&laquo; Prev', url(controller, action, params.merge("page" => previous_page))
-- else
-  &laquo; Prev
+:css
+  .pagination span.clean { border-width: 0px; }
 
-- if total_pages < 13
-  - (1..total_pages).each do |page|
-    - if page == current_page
-      = page
+.pagination
+  - if previous_page
+    =link_to '&laquo; Prev', url(controller, action, params.merge("page" => previous_page)), :class => :prev_next
+  - else
+    %span.prev_next.clean &laquo; Prev
+
+  .pages
+    - if total_pages < 13
+      - (1..total_pages).each do |page|
+        - if page == current_page
+          %span.current=page
+        - else
+          =link_to page, url(controller, action, params.merge("page" => page))
+
+    - elsif current_page < 9
+      - (1..10).each do |page|
+        - if page == current_page
+          %span.current=page
+        - else
+          =link_to page, url(controller, action, params.merge("page" => page))
+      %span.clean &hellip;
+      =link_to total_pages-1, url(controller, action, params.merge("page" => total_pages-1))
+      =link_to total_pages, url(controller, action, params.merge("page" => total_pages))
+
+    - elsif current_page > total_pages - 8
+      =link_to 1, url(controller, action, params.merge("page" => 1))
+      =link_to 2, url(controller, action, params.merge("page" => 2))
+      %span.clean &hellip;
+      - (total_pages-9..total_pages).each do |page|
+        - if page == current_page
+          %span.current=page
+        - else
+          =link_to page, url(controller, action, params.merge("page" => page))
+
     - else
-      =link_to page, url(controller, action, params.merge("page" => page))
+      =link_to 1, url(controller, action, params.merge("page" => 1))
+      =link_to 2, url(controller, action, params.merge("page" => 2))
+      %span.clean &hellip;
+      - (current_page-5..current_page+5).each do |page|
+        - if page == current_page
+          %span.current=page
+        - else
+          =link_to page, url(controller, action, params.merge("page" => page))
+      %span.clean &hellip;
+      =link_to total_pages-1, url(controller, action, params.merge("page" => total_pages)-1)
+      =link_to total_pages, url(controller, action, params.merge("page" => total_pages))
 
-- elsif current_page < 9
-  - (1..10).each do |page|
-    - if page == current_page
-      = page
-    - else
-      =link_to page, url(controller, action, params.merge("page" => page))
-  &hellip;
-  =link_to total_pages-1, url(controller, action, params.merge("page" => total_pages)-1)
-  =link_to total_pages, url(controller, action, params.merge("page" => total_pages))
-
-- elsif current_page > total_pages - 8
-  =link_to 1, url(controller, action, params.merge("page" => 1))
-  =link_to 2, url(controller, action, params.merge("page" => 2))
-  &hellip;
-  - (total_pages-9..total_pages).each do |page|
-    - if page == current_page
-      = page
-    - else
-      =link_to page, url(controller, action, params.merge("page" => page))
-
-- else
-  =link_to 1, url(controller, action, params.merge("page" => 1))
-  =link_to 2, url(controller, action, params.merge("page" => 2))
-  &hellip;
-  - (current_page-5..current_page+5).each do |page|
-    - if page == current_page
-      = page
-    - else
-      =link_to page, url(controller, action, params.merge("page" => page))
-  &hellip;
-  =link_to total_pages-1, url(controller, action, params.merge("page" => total_pages)-1)
-  =link_to total_pages, url(controller, action, params.merge("page" => total_pages))
-
-- if next_page
-  =link_to 'Next &raquo;', url(controller, action, params.merge("page" => next_page))
-- else
-  Next &raquo;
+  - if next_page
+    =link_to 'Next &raquo;', url(controller, action, params.merge("page" => next_page)), :class => :prev_next
+  - else
+    %span.prev_next.clean Next &raquo;
