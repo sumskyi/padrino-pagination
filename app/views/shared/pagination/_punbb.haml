@@ -1,18 +1,23 @@
-Pages:
-- if current_page > 3
-  =link_to 1, url(controller, action, params.merge("page" => 1))
-  - if current_page != 4
-    &hellip;
+:css
+  .pagination span.clean { border-width: 0px; }
 
-- (current_page-2..current_page+3).each do |page|
-  - next unless (1..total_pages+1).include? page
-  - if page == current_page
-    = page
-  - else
-    =link_to page, url(controller, action, params.merge("page" => page))
+.pagination
+  %span.clean
+    Pages:
+    - if current_page > 3
+      =link_to 1, url(controller, action, params.merge("page" => 1))
+      - if current_page != 4
+        %span.clean &hellip;
 
-- if current_page <= total_pages-3
-  - if current_page != total_pages-3
-    &hellip;
-  =link_to total_pages, url(controller, action, params.merge("page" => total_pages))
+  .pages
+    - (current_page-2..current_page+3).each do |page|
+      - next unless (1..total_pages+1).include? page
+      - if page == current_page
+        %span.current=page
+      - else
+        =link_to page, url(controller, action, params.merge("page" => page))
 
+    - if current_page <= total_pages-3
+      - if current_page != total_pages-3
+        %span.clean &hellip;
+      =link_to total_pages, url(controller, action, params.merge("page" => total_pages))
