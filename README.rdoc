@@ -22,13 +22,28 @@ or with options:
     = paginate(:articles, :list, total, :current_page => page, :per_page => 12, :template => :brutal)
 
 
-== Options:
+== Options
 
 The helper uses the link style of url(:controller, :action, :page => page) so that way it can be flexible for your controller schema.
 
 current_page:: current page (default 1)
 per_page:: items per page (default 20)
 template:: used template (brutal / classic / digg / extended / punbb)
+
+
+== Customizing
+
+You can customize the pagination style as follows:
+
+ * It uses by default classes that Padrino Admin's CSS uses - so the default style will fit your admin pages
+ * The pages are enclosed by a div with "pagination" class
+ * Prev/next links has "prev_next" class
+ * First/last links has "first_last" class
+ * The numbers are enclosed by a div with "pages" clas
+ * Page links are, well, links inside that "pages" div
+ * And the current page is a span with "current" class
+
+Remember: not all templates have all those elements.
 
 
 == Credits
