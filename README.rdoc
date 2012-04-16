@@ -35,13 +35,13 @@ template:: used template (brutal / classic / digg / extended / punbb)
 
 You can customize the pagination style as follows:
 
- * It uses by default classes that Padrino Admin's CSS uses - so the default style will fit your admin pages
- * The pages are enclosed by a div with "pagination" class
- * Prev/next links has "prev_next" class
- * First/last links has "first_last" class
- * The numbers are enclosed by a div with "pages" clas
- * Page links are, well, links inside that "pages" div
- * And the current page is a span with "current" class
+* It uses by default classes that Padrino Admin's CSS uses - so the default style will fit your admin pages
+* The pages are enclosed by a div with "pagination" class
+* Prev/next links has "prev_next" class
+* First/last links has "first_last" class
+* The numbers are enclosed by a div with "pages" clas
+* Page links are, well, links inside that "pages" div
+* And the current page is a span with "current" class
 
 Remember: not all templates have all those elements.
 
