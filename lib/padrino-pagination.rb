@@ -1,6 +1,5 @@
-require "padrino-pagination/version"
+require 'padrino-pagination/helpers'
+require 'padrino-pagination/version'
 
 module Padrino
-  module Pagination
-  end
 end
