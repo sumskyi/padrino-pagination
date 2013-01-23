@@ -17,4 +17,6 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   gem.add_dependency 'padrino', '>= 0' # TODO check versions
+
+  gem.add_development_dependency 'minitest'
 end
