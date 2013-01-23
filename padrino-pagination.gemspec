@@ -4,7 +4,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'padrino-pagination/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "gonna_paginate"
+  gem.name          = "padrino-pagination"
   gem.version       = Padrino::Pagination::VERSION
   gem.authors       = ["sumskyi", "kucaahbe"]
   gem.email         = ["sumskyi@gmail.com"]
