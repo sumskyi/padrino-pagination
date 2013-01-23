@@ -1,11 +1,10 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'padrino-pagination/version'
 
 Gem::Specification.new do |gem|
   gem.name          = "padrino-pagination"
-  gem.version       = Padrino::Pagination::VERSION
+  gem.version       = '0.0.1'
   gem.authors       = ["sumskyi", "kucaahbe"]
   gem.email         = ["sumskyi@gmail.com"]
   gem.description   = %q{pagination for padrino}
