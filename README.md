@@ -66,8 +66,13 @@ The helper uses the link style of url(:controller, :action, :current_page => pag
 
 ## Credits
 
-* {Padrino}[http://www.padrinorb.com/]
-* {Sinatra}[http://www.sinatrarb.com/]
-* templates are based on {Kohanaphp 2.3.4}[http://kohanaframework.org/download] pagination templates
+* [Padrino]
+* [Sinatra]
+* templates are based on [Kohanaphp 2.3.4] pagination templates
 
-Copyright (c) 2010-2013 Vladyslav Sumskyi, released under the MIT license
+Copyright (c) 2010-2013 Vladyslav Sumskyi, released under the WTFPL license
+
+  [Padrino]: http://www.padrinorb.com/
+  [Sinatra]: http://www.sinatrarb.com/
+  [Kohanaphp 2.3.4]: http://kohanaframework.org/download
+  
