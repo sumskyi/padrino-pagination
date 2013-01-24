@@ -6,7 +6,8 @@ Pagination for Padrino framework:
 * classic
 * digg
 * extended
-* punbb
+* bootstrap_classic
+* punbb (default)
 
 ## Installation
 
@@ -24,7 +25,36 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+In your template:
+
+    = paginate(:posts, :index, 7890, :page => 1)
+
+or with options:
+
+    = paginate(:articles, :list, total, :page => page, :per_page => 12, :template => :brutal)
+
+### Options
+
+The helper uses the link style of url(:controller, :action, :current_page => page) so that way it can be flexible for your controller schema.
+```
+╔══════════════╦════════════════════════════════╗
+║ page         ║ current page (default 1)       ║
+╠══════════════╬════════════════════════════════╣
+║ per_page     ║ items per page (default 20)    ║
+╠══════════════╬════════════════════════════════╣
+║ template     ║ used template (see list above) ║
+╚══════════════╩════════════════════════════════╝
+
+```
+
+## HTML / CSS API
+* The pages are enclosed by a div with “pagination” class
+* Prevev/next links has “prev_next” class
+* First/last links has “first_last” class
+* The numbers are enclosed by a div with “pages” clas
+* Page links are, well, links inside that “pages” div
+* And the current page is a span with “current” class
+
 
 ## Contributing
 
