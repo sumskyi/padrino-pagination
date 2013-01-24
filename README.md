@@ -35,7 +35,7 @@ or with options:
 
 ### Options
 
-The helper uses the link style of url(:controller, :action, :current_page => page) so that way it can be flexible for your controller schema.
+The helper uses the link style of `url(:controller, :action, :current_page => page)` so that way it can be flexible for your controller schema.
 ```
 ╔══════════════╦════════════════════════════════╗
 ║ page         ║ current page (default 1)       ║
