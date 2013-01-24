@@ -1,0 +1,1 @@
+require 'padrino-pagination/helpers'
