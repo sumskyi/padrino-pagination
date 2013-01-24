@@ -1,0 +1,24 @@
+.pagination
+  %ul
+    - if current_page > 1
+      %li
+        =link_to "&lsaquo; First", url(controller, action, params.merge("page" => 1)), :class => :first_last
+
+    - if previous_page
+      %li
+        =link_to "&laquo;", url(controller, action, params.merge("page" => previous_page)), :class => :prev_next
+
+    - (1..total_pages).each do |page|
+      %li
+        - if page == current_page
+          %span.current=page
+        - else
+          =link_to page, url(controller, action, params.merge("page" => page))
+
+    - if next_page
+      %li
+        =link_to '&raquo;', url(controller, action, params.merge("page" => next_page)), :class => :prev_next
+
+    - if last_page
+      %li
+        =link_to 'Last &rsaquo;', url(controller, action, params.merge("page" => last_page)), :class => :first_last
