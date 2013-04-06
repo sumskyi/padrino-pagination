@@ -1,5 +1,7 @@
 # Pagination
 
+[![Code Climate](https://codeclimate.com/github/sumskyi/padrino-pagination.png)](https://codeclimate.com/github/sumskyi/padrino-pagination)
+
 Pagination for Padrino framework:
 
 * brutal
