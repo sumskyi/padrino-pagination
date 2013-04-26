@@ -1,5 +1,5 @@
-.pagination
-  %ul
+%div
+  %ul.pagination
     - if current_page > 1
       %li
         =link_to "&lsaquo; First".html_safe, url(controller, action, params.merge("page" => 1)), :class => :first_last
