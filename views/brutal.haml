@@ -1,4 +1,6 @@
-.pagination
-  .pages
-    - (1..total_pages).each do |page|
-      =link_to page, url(controller, action, params.merge("page" => page))
+%div
+  %ul.pagination
+    .pages
+      - (1..total_pages).each do |page|
+        %li
+          =link_to page, url(controller, action, params.merge("page" => page))
