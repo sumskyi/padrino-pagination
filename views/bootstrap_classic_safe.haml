@@ -1,5 +1,5 @@
-.pagination
-  %ul
+%div
+  %ul.pagination
     - if current_page > 1
       %li
         =link_to "&lsaquo; First".html_safe, url(controller, action, params.merge("page" => 1)), :class => :first_last
@@ -8,12 +8,25 @@
       %li
         =link_to "&laquo;".html_safe, url(controller, action, params.merge("page" => previous_page)), :class => :prev_next
 
-    - (1..total_pages).each do |page|
+    - if current_page > 2
+      - pages = (current_page + 5 >= total_pages) ? ((current_page - 2)..total_pages) : ((current_page - 2)..(current_page + 5))
+    - else
+      - pages = (1..(total_pages > 5 ? 5 : total_pages))
+
+    - if current_page > 3
+      %li
+        %span.current='...'
+
+    - pages.each do |page|
       %li
         - if page == current_page
           %span.current=page
         - else
           =link_to page.to_s.html_safe, url(controller, action, params.merge("page" => page))
+
+    - if current_page + 5 < total_pages
+      %li
+        %span.current='...'
 
     - if next_page
       %li
