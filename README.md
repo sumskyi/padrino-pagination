@@ -27,6 +27,10 @@ Or install it yourself as:
 
 ## Usage
 
+Register pagination helper in your application:
+
+    register Padrino::Helpers::Pagination
+
 In your template:
 
     = paginate(:posts, :index, 7890, :page => 1)
