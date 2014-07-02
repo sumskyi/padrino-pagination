@@ -9,11 +9,9 @@
         =link_to "Prev", url(controller, action, params.merge("page" => previous_page)), :class => :prev_next
 
     - (1..total_pages).each do |page|
-      %li
-        - if page == current_page
-          %span.current=page
-        - else
-          =link_to page, url(controller, action, params.merge("page" => page))
+      %li{:class => ( "active" if page == current_page) }
+        =link_to page, url(controller, action, params.merge("page" => page))
+
 
     - if next_page
       %li
